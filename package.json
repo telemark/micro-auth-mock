@@ -1,0 +1,73 @@
+{
+  "name": "micro-auth-mock",
+  "description": "ldap auth microservice",
+  "version": "1.0.0",
+  "license": "MIT",
+  "private": true,
+  "author": {
+    "name": "Geir Gåsodden",
+    "email": "geir.gasodden@pythonia.no",
+    "url": "https://github.com/zrrrzzt"
+  },
+  "contributors": [
+    {
+      "name": "Jonas Enge",
+      "email": "jonas.enge@gmail.com",
+      "url": "https://github.com/maccyber"
+    }
+  ],
+  "main": "index.js",
+  "engines": {
+    "node": ">=7.7.3"
+  },
+  "scripts": {
+    "test": "standard && nsp check && ava",
+    "test-offline": "standard && ava",
+    "coverage": "nyc ava",
+    "coveralls": "nyc ava && nyc report --reporter=lcov && cat coverage/lcov.info | coveralls",
+    "setup": "npm install",
+    "standard-fix": "standard --fix",
+    "start": "micro",
+    "now-deploy": "npm test && now --npm && now alias"
+  },
+  "keywords": [
+    "microservice",
+    "micro",
+    "mock",
+    "auth",
+    "Telemark fylkeskommune"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/telemark/micro-auth-mock.git"
+  },
+  "bugs": {
+    "url": "https://github.com/telemark/micro-auth-mock/issues"
+  },
+  "homepage": "https://github.com/telemark/micro-auth-mock",
+  "now": {
+    "alias": [
+      "mock.auth.mikrotjeneste.win"
+    ],
+    "type": "npm",
+    "env": {
+      "NODE_ENV": "production"
+    }
+  },
+  "devDependencies": {
+    "ava": "0.18.2",
+    "coveralls": "2.12.0",
+    "nsp": "2.6.3",
+    "nyc": "10.1.2",
+    "standard": "8.6.0",
+    "test-listen": "1.0.1"
+  },
+  "dependencies": {
+    "axios": "0.15.3",
+    "jsonwebtoken": "7.3.0",
+    "marked": "0.3.6",
+    "micro": "7.1.0",
+    "simple-encryptor": "1.1.0",
+    "urlencoded-body-parser": "2.0.0"
+  }
+}
