@@ -1,0 +1,9 @@
+{
+  "cn": "Demo User",
+  "displayName": "Demo User",
+  "uid": "demouser",
+  "sAMAccountName": "demouser",
+  "company": "Sentraladministrasjonen",
+  "department": "Digitaliseringsgruppa",
+  "mail": "demouser@demo.com"
+}
