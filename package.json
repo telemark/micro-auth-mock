@@ -47,7 +47,7 @@
   "homepage": "https://github.com/telemark/micro-auth-mock",
   "now": {
     "alias": [
-      "mock.auth.mikrotjeneste.win"
+      "auth.demo.t-fk.win"
     ],
     "type": "npm",
     "env": {
