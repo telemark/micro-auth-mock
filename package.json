@@ -1,7 +1,7 @@
 {
   "name": "micro-auth-mock",
   "description": "ldap auth microservice",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "license": "MIT",
   "private": true,
   "author": {
@@ -18,7 +18,7 @@
   ],
   "main": "index.js",
   "engines": {
-    "node": ">=7.8.0"
+    "node": ">=7.9.0"
   },
   "scripts": {
     "test": "standard && nsp check && ava",

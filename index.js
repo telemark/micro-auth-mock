@@ -12,6 +12,7 @@ const lookupUser = require('./lib/lookup-user')
 const saveSession = require('./lib/save-session')
 const loginUser = require('./lib/login-user')
 const generateJwt = require('./lib/generate-jwt')
+const logger = require('./lib/logger')
 
 function addNextPath (data) {
   let nextPath = ''
@@ -39,6 +40,28 @@ module.exports = async (request, response) => {
       const url = `/login?origin=${data.origin}${addNextPath(data)}&error=${em}`
       response.writeHead(302, { Location: url })
       response.end()
+    }
+  } else if (pathname === '/lookup') {
+    const receivedToken = query.jwt || request.headers.authorization
+    if (receivedToken) {
+      jwt.verify(receivedToken, config.JWT_SECRET, async (error, data) => {
+        if (error) {
+          logger(['index', 'lookup', 'error', error])
+          send(response, 500, error)
+        } else {
+          try {
+            const result = await lookupUser(data)
+            logger(['index', 'lookup', 'user found', 'success'])
+            send(response, 200, result)
+          } catch (error) {
+            logger(['index', 'jwt', 'lookup', 'error', error])
+            send(response, 500, error)
+          }
+        }
+      })
+    } else {
+      logger(['index', 'lookup', 'missing jwt', 'error'])
+      send(response, 500, new Error('missing jwt'))
     }
   } else if (query.jwt) {
     const receivedToken = query.jwt
