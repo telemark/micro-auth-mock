@@ -6,6 +6,7 @@ const marked = require('marked')
 const { parse } = require('url')
 const { json, send } = require('micro')
 const config = require('./config')
+const encryptor = require('simple-encryptor')(config.ENCRYPTOR_SECRET)
 const bodyParser = require('urlencoded-body-parser')
 const loginPage = require('./lib/render-login-page')
 const lookupUser = require('./lib/lookup-user')
@@ -52,7 +53,7 @@ module.exports = async (request, response) => {
           try {
             const result = await lookupUser(data)
             logger(['index', 'lookup', 'user found', 'success'])
-            send(response, 200, result)
+            send(response, 200, {data: encryptor.encrypt(result)})
           } catch (error) {
             logger(['index', 'jwt', 'lookup', 'error', error])
             send(response, 500, error)
