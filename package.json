@@ -1,7 +1,7 @@
 {
   "name": "micro-auth-mock",
   "description": "ldap auth microservice",
-  "version": "1.1.2",
+  "version": "1.2.0",
   "license": "MIT",
   "private": true,
   "author": {
@@ -18,7 +18,7 @@
   ],
   "main": "index.js",
   "engines": {
-    "node": ">=7.9.0"
+    "node": ">=7.10.0"
   },
   "scripts": {
     "test": "standard && nsp check && ava",
@@ -47,7 +47,7 @@
   "homepage": "https://github.com/telemark/micro-auth-mock",
   "now": {
     "alias": [
-      "auth.demo.t-fk.win"
+      "auth.ldap.tjeneste.win"
     ],
     "type": "npm",
     "env": {
@@ -55,16 +55,16 @@
     }
   },
   "devDependencies": {
-    "ava": "0.18.2",
-    "coveralls": "2.13.0",
+    "ava": "0.19.1",
+    "coveralls": "2.13.1",
     "nsp": "2.6.3",
-    "nyc": "10.2.0",
-    "standard": "9.0.2",
-    "test-listen": "1.0.1"
+    "nyc": "10.3.2",
+    "standard": "10.0.2",
+    "test-listen": "1.0.2"
   },
   "dependencies": {
-    "axios": "0.15.3",
-    "jsonwebtoken": "7.3.0",
+    "axios": "0.16.1",
+    "jsonwebtoken": "7.4.0",
     "marked": "0.3.6",
     "micro": "7.3.3",
     "simple-encryptor": "1.1.0",
