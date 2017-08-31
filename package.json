@@ -1,7 +1,7 @@
 {
   "name": "micro-auth-mock",
   "description": "ldap auth microservice",
-  "version": "1.2.15",
+  "version": "1.2.16",
   "license": "MIT",
   "private": true,
   "author": {
@@ -66,7 +66,7 @@
     "axios": "0.16.2",
     "jsonwebtoken": "7.4.3",
     "marked": "0.3.6",
-    "micro": "8.0.4",
+    "micro": "8.0.3",
     "simple-encryptor": "1.1.0",
     "urlencoded-body-parser": "2.0.1"
   }
