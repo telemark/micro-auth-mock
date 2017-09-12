@@ -68,7 +68,7 @@
     "axios": "0.16.2",
     "jsonwebtoken": "8.0.1",
     "marked": "0.3.6",
-    "micro": "8.0.4",
+    "micro": "9.0.0",
     "simple-encryptor": "1.1.0",
     "urlencoded-body-parser": "2.0.1"
   }
