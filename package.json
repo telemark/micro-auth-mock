@@ -69,7 +69,7 @@
     "jsonwebtoken": "8.0.1",
     "marked": "0.3.6",
     "micro": "9.0.0",
-    "simple-encryptor": "1.1.0",
+    "simple-encryptor": "1.1.1",
     "urlencoded-body-parser": "2.0.1"
   }
 }
