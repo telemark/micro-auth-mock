@@ -60,14 +60,14 @@
     "coveralls": "3.0.0",
     "nsp": "3.1.0",
     "micro-dev": "2.1.1",
-    "nyc": "11.3.0",
+    "nyc": "11.4.1",
     "standard": "10.0.3",
     "test-listen": "1.1.0"
   },
   "dependencies": {
     "axios": "0.17.1",
     "jsonwebtoken": "8.1.0",
-    "marked": "0.3.7",
+    "marked": "0.3.9",
     "micro": "9.0.2",
     "simple-encryptor": "1.1.1",
     "urlencoded-body-parser": "2.0.1"
