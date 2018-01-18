@@ -18,18 +18,18 @@
   ],
   "main": "index.js",
   "engines": {
-    "node": ">=8.4.0"
+    "node": ">=8.9.4"
   },
   "scripts": {
     "test": "standard && nsp check && ava",
     "test-offline": "standard && ava",
     "coverage": "nyc ava",
     "coveralls": "nyc ava && nyc report --reporter=lcov && cat coverage/lcov.info | coveralls",
-    "setup": "npm install",
     "standard-fix": "standard --fix",
     "start": "micro",
     "dev": "micro-dev",
-    "now-deploy": "npm test && now --npm && now alias"
+    "deploy": "npm test && now && now alias",
+    "refresh": "rm -rf node_modules && rm package-lock.json && npm install"
   },
   "keywords": [
     "microservice",
@@ -40,12 +40,12 @@
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/telemark/micro-auth-mock.git"
+    "url": "git+https://github.com/telemark/micro-auth-mock.git"
   },
   "bugs": {
     "url": "https://github.com/telemark/micro-auth-mock/issues"
   },
-  "homepage": "https://github.com/telemark/micro-auth-mock",
+  "homepage": "https://github.com/telemark/micro-auth-mock#readme",
   "now": {
     "alias": [
       "auth.ldap.tjeneste.win"
@@ -53,6 +53,9 @@
     "type": "npm",
     "env": {
       "NODE_ENV": "production"
+    },
+    "engines": {
+      "node": "8.9.4"
     }
   },
   "devDependencies": {
