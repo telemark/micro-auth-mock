@@ -70,7 +70,7 @@
   "dependencies": {
     "axios": "0.18.0",
     "jsonwebtoken": "8.2.0",
-    "marked": "0.3.17",
+    "marked": "0.3.18",
     "micro": "9.1.4",
     "simple-encryptor": "1.2.0",
     "urlencoded-body-parser": "2.0.1"
