@@ -24,13 +24,13 @@ function addNextPath (data) {
 }
 
 module.exports = async (request, response) => {
-  const {pathname, query} = await parse(request.url, true)
+  const { pathname, query } = await parse(request.url, true)
   if (pathname === '/auth') {
     const data = request.method === 'POST' ? await bodyParser(request) : query
     try {
       const result = await loginUser(data)
       const session = await saveSession(result)
-      const jwt = generateJwt(Object.assign({sessionKey: session}, result))
+      const jwt = generateJwt(Object.assign({ sessionKey: session }, result))
       const url = `${data.origin}?jwt=${jwt}${addNextPath(data)}`
       response.writeHead(302, { Location: url })
       response.end()
@@ -53,7 +53,7 @@ module.exports = async (request, response) => {
           try {
             const result = await lookupUser(data)
             logger(['index', 'lookup', 'user found', 'success'])
-            send(response, 200, {data: encryptor.encrypt(result)})
+            send(response, 200, { data: encryptor.encrypt(result) })
           } catch (error) {
             logger(['index', 'jwt', 'lookup', 'error', error])
             send(response, 500, error)
@@ -74,7 +74,7 @@ module.exports = async (request, response) => {
         try {
           const result = await lookupUser(data)
           const session = await saveSession(result)
-          const jwt = generateJwt(Object.assign({sessionKey: session}, result))
+          const jwt = generateJwt(Object.assign({ sessionKey: session }, result))
           const url = `${data.origin}?jwt=${jwt}${addNextPath(query)}`
           response.writeHead(302, { Location: url })
           response.end()
@@ -90,7 +90,7 @@ module.exports = async (request, response) => {
       response.setHeader('Content-Type', 'text/html')
       send(response, 200, loginPage(data))
     } else {
-      send(response, 500, {error: 'missing required param: origin'})
+      send(response, 500, { error: 'missing required param: origin' })
     }
   } else {
     response.setHeader('Content-Type', 'text/html')
