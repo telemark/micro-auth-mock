@@ -13,9 +13,13 @@ const getUrl = fn => {
 
 test('it returns error if origin is missing', async t => {
   const url = await getUrl(srv)
-  const error = await t.throws(axios.get(`${url}/login`))
-  t.truthy(error)
-  t.is(error.message, 'Request failed with status code 500', 'Error ok')
+  try {
+    const { data } = await axios.get(`${url}/login`)
+    console.log(data)
+  } catch (error) {
+    t.truthy(error)
+    t.is(error.message, 'Request failed with status code 500', 'Error ok')
+  }
 })
 
 test('it returns origin if supplied', async t => {
