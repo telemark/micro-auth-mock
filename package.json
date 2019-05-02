@@ -70,7 +70,7 @@
     "axios": "0.18.0",
     "jsonwebtoken": "8.5.1",
     "marked": "0.6.2",
-    "micro": "9.3.3",
+    "micro": "9.3.4",
     "simple-encryptor": "3.0.0",
     "urlencoded-body-parser": "2.0.1"
   }
